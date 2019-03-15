@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"Vo",
+				"Visitorpostform"
+			],
+			[
+				"Pos",
+				"Postaccess"
+			],
+			[
+				"Post",
+				"PostAccess"
+			],
+			[
+				"login",
+				"login_required"
+			],
+			[
+				"f",
+				"forms"
+			],
+			[
 				"tem",
 				"TEMPLATES"
 			],
@@ -23,51 +43,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "pastebin/apps/urls.py",
-			"settings":
-			{
-				"buffer_size": 226,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "pastebin/pastebin/settings.py",
-			"settings":
-			{
-				"buffer_size": 3514,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "pastebin/apps/views.py",
-			"settings":
-			{
-				"buffer_size": 763,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "pastebin/apps/templates/app/index.html",
-			"settings":
-			{
-				"buffer_size": 30,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "pastebin/apps/templates/app/signup.html",
-			"settings":
-			{
-				"buffer_size": 202,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -106,16 +81,23 @@
 		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps",
 		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/templates",
 		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/templates/app",
-		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/pastebin"
+		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/templates/registration"
 	],
 	"file_history":
 	[
-		"/C/Windows/System32/dev/pastebinclonedirectory/.git/COMMIT_EDITMSG",
+		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/pastebin/urls.py",
+		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/templates/app/profile.html",
+		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/urls.py",
+		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/admin.py",
+		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/views.py",
+		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/pastebin/settings.py",
+		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/models.py",
+		"/C/Windows/System32/dev/.git/COMMIT_EDITMSG",
+		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/forms.py",
 		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/templates/app/signup.html",
+		"/C/Windows/System32/dev/pastebinclonedirectory/.git/COMMIT_EDITMSG",
 		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/templates/registration/login.html",
 		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/templates/app/base.html",
-		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/pastebin/urls.py",
-		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/models.py",
 		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/registration/login.html",
 		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/pastebin/registration/login.html",
 		"/C/Windows/System32/dev/pastebinclonedirectory/pastebin/apps/templates/app/login.html",
@@ -142,7 +124,7 @@
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -156,6 +138,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"forms.py",
+			"models.py",
+			"user",
 			"home"
 		],
 		"highlight": true,
@@ -174,159 +159,14 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "pastebin/apps/urls.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 226,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								193,
-								193
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "pastebin/pastebin/settings.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3514,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3513,
-								3513
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 384.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "pastebin/apps/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 763,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								701,
-								701
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "pastebin/apps/templates/app/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 30,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								30,
-								30
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "pastebin/apps/templates/app/signup.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 202,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								202,
-								202
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -363,7 +203,7 @@
 	"project": "PastebinClone",
 	"replace":
 	{
-		"height": 46.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -401,7 +241,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 217.0,
+	"side_bar_width": 280.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

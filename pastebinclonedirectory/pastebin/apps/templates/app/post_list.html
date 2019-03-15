@@ -1,6 +1,6 @@
 {% extends "app/base.html" %}
 {% block body %}
-    
+<table class="table">
     {% for post in posts %}
 
 
@@ -10,17 +10,21 @@
   <div class="well">
       <div class="media">
       <div class="media-body">
+      	<h4>Number : {{post.pk}}<h4>
         <a class="media-heading" href="#"><h4>Title - {{ post.title }}</h5></a>
           <p>{{ post.content }}</p>
           <ul class="list-inline list-unstyled">
         <li><span><i class="glyphicon glyphicon-calendar"></i> Posted {{ post.date_posted|date:"F d, Y" }} </span></li>
             <li>|</li>
             <span><i class="glyphicon glyphicon-user"></i> Author: {{ post.author }}</span>
+			<span><a href="{%url 'edit-post' pk=post.pk%}"><button class="btn btn-warning">Edit</button></a></span>
+			<span><button class="btn btn-danger">Delete</button></span>            
+            
      </ul>
        </div>
     </div>
   </div>
 
     {% endfor %}
-
-{% endblock body%}
+</table>
+{% endblock body %}
