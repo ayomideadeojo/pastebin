@@ -34,3 +34,6 @@ the default sqlite database is used for this project as well.
 
 Settings.py
 an email backend was including to allow password resets though gmail
+
+apps/Models.py
+Contains the post models
