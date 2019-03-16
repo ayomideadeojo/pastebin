@@ -12,43 +12,42 @@ from django.db.models import Q
 
 # Create your views here.
 
-def home(request):
+def home(request): #this view obtains post objects and filters out from only public posts, this is shown on the home page
 	context = {
 		'posts': Post.objects.filter(private=False).order_by('date_posted')
  	}
-	return render(request, 'app/index.html',context)
+	return render(request, 'app/index.html',context) #the post context is ten rendered on the html page
 
 
-def signup(request):
+def signup(request): #this is a definition of signup 
     if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
+        form = UserRegisterForm(request.POST) #UserRegisterfrom is generated
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            messages.success(request, 'Account Created!')
-            return redirect('home')
+            login(request, user)             #user is logged in after signning up
+            return redirect('home') #user is redirected to home
     else:
         form = UserRegisterForm()
     return render(request, 'app/signup.html', {'form': form})
 
-@login_required
+@login_required #login tags to ensure users are logged in before accessing certain files
 def profile(request):
     context ={
-        'user' : request.user
+        'user' : request.user  #current user is requested
     }
     return render(request,'app/profile.html',context)
 
 @login_required
-def editprofile(request,pk):
-    user = get_object_or_404(User, pk=pk)
+def editprofile(request,pk):   # this is the edit profile definition which takes user and a private key which django defines in order to delete users
+    user = get_object_or_404(User, pk=pk) 
     if request.method == "POST":
-        form = UserRegisterForm(request.POST,instance=user)
+        form = UserRegisterForm(request.POST,instance=user) # a form is created and is populated with the user instance variables 
         
         if form.is_valid():
-                form.save()
+                form.save()       #form is saved and user is redirected to home
                 return redirect('home')
 
     else:
@@ -61,10 +60,10 @@ def editprofile(request,pk):
             return render(request,'app/signup.html',context)
 
 @login_required
-def deleteprofile(request,pk):
+def deleteprofile(request,pk):   #followes same functionality editprofile 
         user = get_object_or_404(User, pk=pk)
         if request.method == "POST":
-            form = UserRegisterForm(request.POST,instance=user)
+            form = UserRegisterForm(request.POST,instance=user) #form is used again, user must type in values to further confirm deletion of account
             user.delete()
             return redirect('home')
         else:
@@ -77,15 +76,15 @@ def deleteprofile(request,pk):
             return render(request,'app/signup.html',context)
 
 
-def logout_view(request):
+def logout_view(request): ##logout view
     logout(request)
     return render(request, 'app/logout.html')
 
 @login_required
-def userpostnew(request):
+def userpostnew(request):  #New post view for users 
     if request.method == 'POST':
-        form = Userpostform(request.POST)
-        if form.is_valid():
+        form = Userpostform(request.POST) #Userpostformis created and defined 
+        if form.is_valid(): 
             post = form.save(commit=False)
             post.author = request.user
             post.save()
@@ -99,18 +98,18 @@ def admin(request):
     return render(request,'admin/')
 
 @login_required
-def post_list_admin(request):
+def post_list_admin(request): #postlist for specific user, this is used for the my posts seciton of the application
     context = {
-        'posts': Post.objects.filter(author=request.user).order_by('date_posted'),
+        'posts': Post.objects.filter(author=request.user).order_by('date_posted'), #request-user ensures current user instance is used
 
     }
     return render(request,'app/post_list.html',context)
 
 
 
-@login_required
-def edit_post(request, pk):
-    post = get_object_or_404(Post, pk=pk)
+@login_required 
+def edit_post(request, pk):  #post edit functiionality 
+    post = get_object_or_404(Post, pk=pk) #private key and Post variables are passed to obtain current post
     if request.method == "POST":
         form = Userpostform(request.POST,instance=post)
         
@@ -128,11 +127,11 @@ def edit_post(request, pk):
             return render(request,'app/userpostnew.html',context)
 
 @login_required
-def delete_post(request,pk):
-        post = get_object_or_404(Post, pk=pk)
+def delete_post(request,pk):  #delete post functionality 
+        post = get_object_or_404(Post, pk=pk) #current post and private key are used to obtain current post
         if request.method == "POST":
             form = Userpostform(request.POST,instance=post)
-            post.delete()
+            post.delete() #post is deleted 
             return redirect('post-list')
         else:
             form = Userpostform(instance=post)
@@ -143,11 +142,11 @@ def delete_post(request,pk):
             }
             return render(request,'app/userpostnew.html',context)
 
-def search(request):
+def search(request): #this is search functionality
     template = "app/index.html"
-    query = request.GET.get('q')
-    results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
+    query = request.GET.get('q') #query is definied in the search tags 
+    results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query)) #the query is compared to title and content data within the database
     context = {
         'posts': results
     }
-    return render(request,'app/index.html',context)
+    return render(request,'app/index.html',context) #this is then passed to the index html page which uses posts and return the results

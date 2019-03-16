@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps',
+    'apps', 
 ]
 
 MIDDLEWARE = [
@@ -124,6 +124,7 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+#email back end used for project 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
