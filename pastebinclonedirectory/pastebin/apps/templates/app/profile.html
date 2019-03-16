@@ -1,1 +1,24 @@
 {% extends "app/base.html" %}
+{% block body %}
+<table class="table">
+<div class="container">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+  <div class="well">
+      <div class="media">
+      <div class="media-body">
+      	<h4>Unique ID : {{user.pk}}<h4>
+        <a class="media-heading" href="#"><h4>UserName {{ user.username }}</h5></a>
+          <p>{{ post.content }}</p>
+          <ul class="list-inline list-unstyled">
+			<span><a href="{%url 'edit-profile' pk=user.pk %}"><button class="btn btn-warning">Edit</button></a></span>
+			<span><a href="{%url 'delete-profile' pk=user.pk %}"><button class="btn btn-danger">Delete</button></a></span>            
+            
+     </ul>
+       </div>
+    </div>
+  </div>
+
+
+</table>
+{% endblock body %}
