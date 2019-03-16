@@ -36,4 +36,7 @@ Settings.py
 an email backend was including to allow password resets though gmail
 
 apps/Models.py
-Contains the post models
+Contains the post model
+
+apps/forms.py
+Contains formssuch as userpost,and registration from
