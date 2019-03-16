@@ -15,7 +15,7 @@ class Visitorpostform(forms.ModelForm):
 	class Meta:
 		model = Post
 		fields = ('title','content')
-#class for user registration form this has 4 fields, username,email,password,password2
+#class for user registration form this has 4 fields, username,email,password,password
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
 

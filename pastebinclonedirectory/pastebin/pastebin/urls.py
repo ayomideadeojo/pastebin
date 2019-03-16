@@ -18,6 +18,6 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('apps.urls')),
+    path('',include('apps.urls')), #this is a redirect to apps.urls where most of the path code is found
     
 ]
